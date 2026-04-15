@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kollár Méhészet</title>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial;
+    background:#fff8e1;
+    color:#5a4a00;
+}
+
+/* NAVBAR */
+header {
+    background:#fff3b0;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav a {
+    margin:0 10px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#5a4a00;
+}
+
+nav a.active {
+    color:#c79a00;
+    border-bottom:2px solid #c79a00;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(255,200,0,0.6), rgba(255,200,0,0.6)),
+    url('https://i.pinimg.com/736x/b8/a3/2a/b8a32a6322186e8bc2009314ba864107.jpg');
+    background-size:cover;
+    background-position:center;
+    text-align:center;
+    color:white;
+    padding:100px 20px;
+}
+
+.hero h1 { font-size:3rem; }
+
+section {
+    padding:40px 20px;
+    max-width:1000px;
+    margin:auto;
+    scroll-margin-top:80px;
+}
+
+/* GALÉRIA */
+.gallery {
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.gallery img {
+    width:calc(33% - 10px);
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.gallery img:hover {
+    transform:scale(1.05);
+}
+
+/* TERMÉKEK */
+.product-grid {
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.product {
+    flex:1;
+    background:#ffe082;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.product:hover {
+    transform:translateY(-5px);
+}
+
+.product img {
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* KOSÁR */
+.cart {
+    background:#fffdf5;
+    padding:20px;
+    border-radius:10px;
+    margin-top:30px;
+}
+
+.cart-item {
+    display:flex;
+    justify-content:space-between;
+    margin:5px 0;
+}
+
+/* FORM */
+input {
+    width:100%;
+    padding:10px;
+    margin:5px 0;
+}
+
+/* ELÉRHETŐSÉG */
+.contact-box {
+    background:#fffdf5;
+    padding:20px;
+    border-radius:10px;
+    line-height:1.8;
+}
+
+/* GOMB */
+button {
+    padding:10px;
+    border:none;
+    background:#c79a00;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover {
+    transform:scale(1.05);
+}
+
+/* BACK TO TOP */
+#topBtn {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    display:none;
+    background:#c79a00;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+footer {
+    text-align:center;
+    padding:20px;
+    background:#fff3b0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Kollár Méhészet 🍯</h1>
+    <nav>
+        <a href="#about">Rólunk</a>
+        <a href="#gallery">Képek</a>
+        <a href="#products">Termékek</a>
+        <a href="#order">Rendelés</a>
+        <a href="#contact">Elérhetőség</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Természetes Méz</h1>
+    <p>Közvetlenül a termelőtől</p>
+</section>
+
+<section id="about">
+    <h2>Rólunk</h2>
+    <p>
+<p>A Kollár Méhészet egy frissen indult családi vállalkozás, ahol a méhészet iránti lelkesedés és elhivatottság áll a középpontban.</p>
+
+<p>Nem több évtizedes múlttal, hanem tiszta szándékkal és folyamatos tanulással dolgozunk azért,
+hogy minőségi, természetes mézet kínáljunk vásárlóinknak.</p>
+
+<p>Számunkra kiemelten fontos a méhek gondos tartása és a természet tisztelete,
+hiszen hisszük, hogy a jó méz alapja az egészséges környezet és az odafigyelés.</p>
+
+<p>Célunk, hogy egy megbízható, szerethető helyi méhészetté váljunk, ahol a vásárlók mindig tiszta és valódi termékeket kapnak.</p>
+</p>
+</section>
+
+<section id="gallery">
+    <h2>📸 Képek</h2>
+    <div class="gallery">
+        <img src="https://i.pinimg.com/736x/2c/7a/cc/2c7acc1288e9ecf99708424011cac0ab.jpg">
+        <img src="https://i.pinimg.com/736x/a2/10/80/a21080f5dd73522d266f47b62bb5c716.jpg">
+        <img src="https://i.pinimg.com/736x/4d/b8/77/4db8773fafe1e1b15cf120d4dd065407.jpg">
+        <img src="https://i.pinimg.com/736x/d3/75/ae/d375aea4f05d5cf8317abd8e94440996.jpg">
+    </div>
+</section>
+
+<section id="products">
+    <h2>🍯 Termékek</h2>
+
+    <div class="product-grid">
+        <div class="product">
+            <img src="https://p1.akcdn.net/full/320958615.csokas-akacmez-950g.jpg">
+            <p>Akácméz 500g</p>
+            <b>1800 Ft</b><br>
+            <button onclick="addToCart('Akácméz',1800)">Kosárba</button>
+        </div>
+
+        <div class="product">
+            <img src="https://www.mezeselet.hu/wp-content/uploads/2025/09/viragmez-1000gramm.jpg">
+            <p>Virágméz 500g</p>
+            <b>3000 Ft</b><br>
+            <button onclick="addToCart('Virágméz',3000)">Kosárba</button>
+        </div>
+
+        <div class="product">
+            <img src="https://vegabox.hu/wp-content/uploads/2018/10/25aa9550-38bf-11ec-b4fb-eaa9c8f8c352_hars950.webp">
+            <p>Hársméz 500g</p>
+            <b>3800 Ft</b><br>
+            <button onclick="addToCart('Hársméz',3800)">Kosárba</button>
+        </div>
+
+        <div class="product">
+            <img src="https://frissmez.hu/wp-content/uploads/2024/03/Gesztenyemez-min-scaled.jpg">
+            <p>Gesztenyeméz  500g</p>
+            <b>5000 Ft</b><br>
+            <button onclick="addToCart('Gesztenyeméz',5000)">Kosárba</button>
+        </div>
+    </div>
+</section>
+
+<section id="order">
+    <h2>🛒 Kosár & Rendelés</h2>
+
+    <div class="cart">
+        <div id="cart-items"></div>
+        <p><b>Összesen: <span id="total">0</span> Ft</b></p>
+        <button onclick="clearCart()">Kosár ürítése</button>
+    </div>
+
+    <form id="orderForm" action="https://formspree.io/f/meevegpz" method="POST">
+        <input type="text" name="name" placeholder="Neved" required>
+        <input type="text" name="phone" placeholder="Telefonszám" required>
+        <input type="email" name="email" placeholder="Email cím" required>
+        <input type="text" name="address" placeholder="Cím" required>
+
+        <input type="hidden" name="order" id="orderData">
+
+        <button type="submit">Rendelés elküldése</button>
+    </form>
+</section>
+
+<section id="contact">
+    <h2>📞 Elérhetőségek</h2>
+    <div class="contact-box">
+        <p>📍 Csurgó</p>
+        <p>📞 +36 30 7560 757</p>
+        <p>📧 Kollarandras2005@gmail.com</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Kollár Méhészet
+</footer>
+
+<button id="topBtn">↑</button>
+
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({name, price});
+    renderCart();
+}
+
+function renderCart() {
+    let container = document.getElementById("cart-items");
+    container.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price;
+        container.innerHTML += `
+            <div class="cart-item">
+                ${item.name} - ${item.price} Ft
+                <button onclick="removeItem(${index})">❌</button>
+            </div>`;
+    });
+
+    document.getElementById("total").innerText = total;
+}
+
+function removeItem(i) {
+    cart.splice(i,1);
+    renderCart();
+}
+
+function clearCart() {
+    cart = [];
+    renderCart();
+}
+
+/* rendelés */
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+    if(cart.length === 0) {
+        e.preventDefault();
+        alert("A kosár üres!");
+        return;
+    }
+
+    let txt = "";
+    cart.forEach(i => txt += i.name + " - " + i.price + " Ft\n");
+    document.getElementById("orderData").value = txt;
+});
+
+/* aktív menü */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(sec => {
+        const top = sec.offsetTop - 100;
+        if(scrollY >= top) current = sec.getAttribute("id");
+    });
+
+    navLinks.forEach(a => {
+        a.classList.remove("active");
+        if(a.getAttribute("href") === "#" + current) {
+            a.classList.add("active");
+        }
+    });
+});
+
+/* vissza a tetejére */
+const btn = document.getElementById("topBtn");
+
+window.onscroll = () => {
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
+};
+
+btn.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
+</script>
+
+</body>
+</html>
